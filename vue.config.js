@@ -3,7 +3,7 @@ module.exports = {
         devServer: {
             proxy: {
                 '/api': {
-                    target: 'http://localhost:8000',
+                    target: process.env.SCHEDULE_TO_DANCE_API,
                     changeOrigin: true,
                     secure: false
                 }
