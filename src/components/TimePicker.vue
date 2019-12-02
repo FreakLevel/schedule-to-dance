@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <vue-timepicker v-model="time" close-on-complete @input="handleTimePicker"></vue-timepicker>
+    <div class="container">
+        <h2>Select the hour for save</h2>
+        <vue-timepicker class="container--margin-center" v-model="time" close-on-complete @input="handleTimePicker"></vue-timepicker>
     </div>
 </template>
 

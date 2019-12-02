@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <section id="title">
+      <h1>Appointment your datetime to dance with death</h1>
+    </section>
     <keep-alive>
       <div v-if="step === 0" >
         <DatePicker :dateChoosed='date' @choose-day="selectDate" />
@@ -70,7 +73,27 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  height: 100vh;
+  width: 60%;
+  background-color: rgba(61, 61, 61, 0.6);
+  margin: 0 auto;
+}
+
+body {
+  margin: 0px;
+  background-image: url('./assets/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: darkgrey;
+  background-size: cover;
+  margin-top: -20px
+}
+
+#title {
+  text-align: center;
+  padding-top: 20px ;
+  text-decoration: underline;
+  margin-bottom: 80px;
 }
 </style>

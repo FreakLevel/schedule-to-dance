@@ -1,10 +1,10 @@
 <template>
-<div>
-    <h1>{{today}}</h1>
-    <v-date-picker mode='single' v-model="date" is-dark is-inline
-        :min-date="today" :disabled-dates='{ weekdays: [1, 7] }' :dayclick='selectDate(date)'
-    />
-</div>
+    <div class="container">
+        <h2>Select the date you want</h2>
+        <v-date-picker class="container--margin-center" mode='single' v-model="date" is-dark is-inline
+            :min-date="today" :disabled-dates='{ weekdays: [1, 7] }' :dayclick='selectDate(date)'
+        />
+    </div>
 </template>
 
 <script>
@@ -31,3 +31,15 @@ export default {
     }
 }
 </script>
+
+<style>
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container--margin-center {
+    margin: 0 auto;
+}
+</style>

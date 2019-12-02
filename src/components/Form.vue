@@ -1,18 +1,25 @@
 <template>
     <div>
         <section>
-            <h2>{{schedule}}</h2>
+            <h2>
+                This is the datetime for you appointment
+            </h2>
+            <h3>{{schedule}}</h3>
         </section>
         <section>
             <div>
-                <span>Name: </span>
+                <div class="div__form div--inline">
+                    <span>Name: </span>
+                </div>
                 <input type="text" v-model="name" />
             </div>
             <div>
-                <span>Email: </span>
+                <div class="div__form div--inline">
+                    <span>Email: </span>
+                </div>
                 <input type="email" v-model="email" />
             </div>
-            <button v-on:click='createAppointment'>Create Appointment</button>
+            <button class="button" v-on:click='createAppointment'>Create Appointment</button>
         </section>
     </div>
 </template>
@@ -52,3 +59,31 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.div__form {
+    width: 75px;
+}
+
+.div--inline {
+    display: inline-block;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+span {
+    font-weight: bold
+}
+
+.button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    background-color: aliceblue;
+    color: black;
+}
+</style>
