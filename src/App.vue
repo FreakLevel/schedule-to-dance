@@ -8,6 +8,7 @@
         <TimePicker :timeChoosed='time' @choose-time="selectTime" :appointments='dateAppointments' :date='date' />
       </div>
       <div v-else >
+        <Form :date='date' :time='time' />
       </div>
     </keep-alive>
   </div>
@@ -19,12 +20,14 @@ import moment from 'moment'
 
 import DatePicker from './components/DatePicker'
 import TimePicker from './components/TimePicker'
+import Form from './components/Form'
 
 export default {
   name: 'app',
   components: {
     DatePicker,
-    TimePicker
+    TimePicker,
+    Form
   },
   data: function () {
     return {

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>Hora</h1>
         <vue-timepicker v-model="time" close-on-complete @input="handleTimePicker"></vue-timepicker>
     </div>
 </template>
