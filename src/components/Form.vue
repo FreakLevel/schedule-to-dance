@@ -41,7 +41,7 @@ export default {
                     email: this.email,
                     name: this.name,
                     schedule: this.schedule
-                }).then(response => {
+                }).then(() => {
                     alert('Your appointment has been created successfully.')
                     location.reload()
                 }).catch(error => {
