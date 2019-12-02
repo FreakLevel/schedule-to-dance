@@ -3,7 +3,7 @@
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <keep-alive>
       <div v-if="step === 0" >
-        
+        <DatePicker @choose-day="selectDate" />
       </div>
       <div v-else-if="step === 1" >
       </div>
@@ -17,19 +17,29 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios'
 
+import DatePicker from './components/DatePicker'
+
 export default {
   name: 'app',
   components: {
     //HelloWorld
+    DatePicker
   },
   data: function () {
     return {
       step: 0,
-      appointments: null
+      appointments: null,
+      date: ''
     }
   },
   mounted() {
     axios.get('api/appointments').then(response => this.appointments = response.data)
+  },
+  methods: {
+    selectDate: function (date) {
+      this.date = date
+      this.step += 1
+    }
   }
 }
 </script>
