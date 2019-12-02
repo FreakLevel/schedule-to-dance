@@ -12,9 +12,10 @@ import moment from 'moment'
 
 export default {
     name: 'DatePicker',
+    props: [ 'dateChoosed' ],
     data: function () {
         return {
-            date: null,
+            date: this.dateChoosed,
             today: null
         }
     },

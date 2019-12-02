@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <!--<HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <keep-alive>
       <div v-if="step === 0" >
-        <DatePicker @choose-day="selectDate" />
+        <DatePicker :dateChoosed='date' @choose-day="selectDate" />
       </div>
       <div v-else-if="step === 1" >
+        <TimePicker :timeChoosed='time' @choose-time="selectTime" :appointments='dateAppointments' :date='date' />
       </div>
       <div v-else >
       </div>
@@ -14,22 +14,26 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios'
+import moment from 'moment'
 
 import DatePicker from './components/DatePicker'
+import TimePicker from './components/TimePicker'
 
 export default {
   name: 'app',
   components: {
-    //HelloWorld
-    DatePicker
+    DatePicker,
+    TimePicker
   },
   data: function () {
     return {
       step: 0,
       appointments: null,
-      date: ''
+      date: null,
+      dateAppointments: [],
+      example: null,
+      time: {}
     }
   },
   mounted() {
@@ -38,6 +42,19 @@ export default {
   methods: {
     selectDate: function (date) {
       this.date = date
+      this.step += 1
+      this.filterDateAppointment()
+    },
+    filterDateAppointment() {
+      this.example = this.appointments
+      this.dateAppointments = this.appointments.filter(appointment => {
+        if(moment(appointment.schedule.split(' ')[0]).isSame(this.date)) {
+          return appointment
+        }
+      })
+    },
+    selectTime(time) {
+      this.time = time
       this.step += 1
     }
   }
