@@ -1,24 +1,10 @@
-# schedule-to-dance
+# Schedule To Dance Front-end
 
-## Project setup
-```
-yarn install
-```
+###This is a test for a company where you make a appointment to dance with death.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+[Back-end is in other repository]('https://github.com/FreakLevel/ScheduleToDanceAPI')
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## What need do
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- The first layout will display a date selector showcasing the current month.
+- If you click on any date, the available hour spaces will be displayed on screen to be selected

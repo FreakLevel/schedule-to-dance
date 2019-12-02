@@ -14,6 +14,9 @@
         <Form :date='date' :time='time' />
       </div>
     </keep-alive>
+    <a target="_blank" href='https://github.com/FreakLevel/schedule-to-dance'>
+      <img alt='Github-Logo' src='./assets/github.png' width="100px" />
+    </a>
   </div>
 </template>
 
@@ -95,5 +98,11 @@ body {
   padding-top: 20px ;
   text-decoration: underline;
   margin-bottom: 80px;
+}
+
+img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 </style>

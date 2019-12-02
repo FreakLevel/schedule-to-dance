@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h2>Select the date you want</h2>
+        <h2>Select the date do you want</h2>
         <v-date-picker class="container--margin-center" mode='single' v-model="date" is-dark is-inline
             :min-date="today" :disabled-dates='{ weekdays: [1, 7] }' :dayclick='selectDate(date)'
         />
